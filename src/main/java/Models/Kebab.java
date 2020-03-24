@@ -9,6 +9,7 @@ public class Kebab {
 
     public Kebab() {
         this.ingredients = new ArrayList<Ingredient>();
+        this.sauce = null;
     }
 
     public void addIngredient(Ingredient ingredient) {
@@ -31,5 +32,21 @@ public class Kebab {
             if(i.getType() == IngredientType.MEAT) return false;
         }
         return true;
+    }
+
+    public void removeOignons() {
+        for (Ingredient i : ingredients) {
+            if(i.getName() == IngredientName.OIGNON) ingredients.remove(i);
+        }
+    }
+
+    public void addCheese() {
+        int count = 0;
+        for (Ingredient i : ingredients) {
+            if(i.getName() == IngredientName.CHEESE) count++;
+        }
+        for(int i = 0; i < count; i++) {
+            ingredients.add(new Ingredient(IngredientName.CHEESE, IngredientType.VEGETARIAN));
+        }
     }
 }

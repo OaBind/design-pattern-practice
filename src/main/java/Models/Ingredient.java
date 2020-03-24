@@ -1,18 +1,18 @@
 package Models;
 
 public class Ingredient {
-    private String name;
+    private IngredientName name;
     private IngredientType type;
 
-    public Ingredient(String name, IngredientType it) {
+    public Ingredient(IngredientName name, IngredientType it) {
         this.name = name;
     }
 
-    public String getName() {
+    public IngredientName getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(IngredientName name) {
         this.name = name;
     }
 
