@@ -51,6 +51,7 @@ public class Kebab {
         for (Ingredient i : ingredients) {
             if(i.getName() == IngredientName.CHEESE) count++;
         }
+        if(count == 0) count++;
         for(int i = 0; i < count; i++) {
             ingredients.add(new Ingredient(IngredientName.CHEESE, IngredientType.VEGETARIAN));
         }
