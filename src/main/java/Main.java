@@ -1,16 +1,23 @@
 import Models.Ingredient;
+import Models.IngredientType;
 import Models.Kebab;
+import Models.Sauce;
 
 public class Main {
     public static void main (String[] args) {
         Kebab k = new Kebab();
-        k.addIngredient(new Ingredient("Salade", true));
-        k.addIngredient(new Ingredient("Tomate", true));
-        k.addIngredient(new Ingredient("Oignon", true));
+        k.addIngredient(new Ingredient("Salade", IngredientType.VEGETARIAN));
+        k.addIngredient(new Ingredient("Tomate", IngredientType.VEGETARIAN));
+        k.addIngredient(new Ingredient("Oignon", IngredientType.VEGETARIAN));
+        k.setSauce(Sauce.BARBECUE);
         if(k.isVegan()) {
             System.out.println("That kebab is vegan");
         } else {
-            System.out.println("Uh, meet...");
+            if(k.isPescetarian()) {
+                System.out.println("Quite ok");
+            } else {
+                System.out.println("Not vegan at all, meat-eater");
+            }
         }
     }
 }

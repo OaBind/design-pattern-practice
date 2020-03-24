@@ -2,11 +2,10 @@ package Models;
 
 public class Ingredient {
     private String name;
-    private boolean isVegan;
+    private IngredientType type;
 
-    public Ingredient(String name, boolean isVegan) {
+    public Ingredient(String name, IngredientType it) {
         this.name = name;
-        this.isVegan = isVegan;
     }
 
     public String getName() {
@@ -17,11 +16,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public boolean isVegan() {
-        return isVegan;
+    public IngredientType getType() {
+        return type;
     }
 
-    public void setVegan(boolean vegan) {
-        isVegan = vegan;
+    public void setType(IngredientType type) {
+        this.type = type;
     }
 }
