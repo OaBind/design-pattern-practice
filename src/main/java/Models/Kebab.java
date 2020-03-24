@@ -35,11 +35,17 @@ public class Kebab {
     }
 
     public void removeOignons() {
+        removeIngredient(IngredientName.OIGNON);
+    }
+
+    public void removeIngredient(IngredientName ingredient) {
         for (Ingredient i : ingredients) {
-            if(i.getName() == IngredientName.OIGNON) ingredients.remove(i);
+            if(i.getName() == ingredient) ingredients.remove(i);
         }
     }
 
+    // I think it's possible to make it in one loop,
+    // but don't know which method to use, so it's a bit barbarous
     public void addCheese() {
         int count = 0;
         for (Ingredient i : ingredients) {

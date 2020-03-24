@@ -6,6 +6,7 @@ public class Ingredient {
 
     public Ingredient(IngredientName name, IngredientType it) {
         this.name = name;
+        this.type = it;
     }
 
     public IngredientName getName() {
